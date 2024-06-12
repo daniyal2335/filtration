@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task2</title>
+</head>
+<body>
+    <div>
+    <label for="">Name</label>
+    <input type="text" id="user">
+    <br>
+    <br>
+    <label for="">physics marks</label>
+    <input type="text" id="phy">
+    <br>
+    <br>
+    <label for="">chemistry marks</label>
+    <input type="text"  id="chem">
+    <br>
+    <br>
+    <label for="">Math marks</label>
+    <input type="text" id="mth">
+    <br>
+    <br>
+    <label for="">English marks</label>
+    <input type="text" id="eng">
+    <br>
+    <br>
+    <label for="">urdu marks</label>
+    <input type="text" id="udu">
+    <br>
+    <br>
+
+    
+    <button onclick="fun()">calculate</button>
+    </div>
+
+    <table>
+        <tr>
+            <td>Total marks:</td>
+            <td>500</td>
+        </tr>
+        <tr>
+            <td>Obtained marks:</td>
+            <td id="obtain"></td>
+        </tr>
+        <tr>
+            <td>Percentage:</td>
+            <td id="per"></td>
+        </tr>
+        <tr>
+            <td>Grade:</td>
+            <td id="grade"></td>
+        </tr>
+        <tr>
+            <td>Remarks:</td>
+            <td id="remarks"></td>
+        </tr>
+    </table>
+    <h1 id="data"></h1>
+
+<script>
+
+    function fun(){
+        let emp_name = document.getElementById("user").value;
+        document.getElementById("data").innerHTML = "Name:" + emp_name;
+        let a =parseInt(document.getElementById("phy").value);
+        let b=parseInt(document.getElementById("chem").value);
+        let c=parseInt(document.getElementById("mth").value);
+        let d= parseInt(document.getElementById("eng").value);
+        let e= parseInt(document.getElementById("udu").value);
+        if(a>100 || b>100 || c>100 || d>100 || e>100){
+            alert("please enter correct value");
+        }
+        else{
+            let obtained = a+b+c+d+e;
+            document.getElementById("obtain").innerHTML=obtained;
+        
+            let percentage=obtained/500*100;
+            document.getElementById("per").innerHTML=percentage;
+            if(a>40 && b>40 && c>40 && d>40 && e>40){
+                document.getElementById("remarks").innerHTML="pass";
+            }
+                else{
+                    document.getElementById("remarks").innerHTML="fail";
+                }
+                if(obtained>=80){
+                document.getElementById("grade").innerHTML ="A+";
+            }
+            else if(obtained>=70){
+                document.getElementById("grade").innerHTML = "A";
+            }
+            else if(obtained>=60){
+                document.getElementById("grade").innerHTML ="B";
+
+            }
+            else if(obtained>=50){
+                document.getElementById("grade").innerHTML ="c";
+            }
+            else if(obtained>=40){
+                document.getElementById("grade").innerHTML ="D";
+            }
+            else if(obtained>=30){
+                document.getElementById("grade").innerHTML ="FAIL";
+            }
+        }
+    }
+       
+    
+</script>
+</body>
+</html>

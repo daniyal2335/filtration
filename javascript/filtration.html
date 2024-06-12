@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Searching</title>
+    <style>
+        .row{
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            flex-wrap: wrap;
+        }
+        .col{
+            height: 400px;
+            width: 350px;
+            border: 1px solid black;
+            margin-top:20px ;
+        }
+        .col img{
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <label for="">search </label>
+   
+      <input type="text"
+        class="form-control" name="" id="se" aria-describedby="helpId" placeholder="">
+     <button type="button" name="" onkeyup="searchhere()" id="" class="btn btn-primary" btn-lg btn-block">search here</button>
+    <div class="container">
+        <div class="row" id="r1">
+          
+        </div>
+    </div>
+    <script>
+        let r1 = document.querySelector("#r1");
+        let c = "";
+        let obj_data = [
+            {"name":"samsung","price":78000,"image":"images/im1.jpg"},
+            {"name":"oppo","price":69000,"image":"images/im2.jpg"},
+            {"name":"samsung","price":58000,"image":"images/im3.jpg"},
+            {"name":"nokia","price":56000,"image":"images/im4.jpg"},
+            {"name":"oppo","price":77000,"image":"images/im5.jpg"},
+            {"name":"samsung","price":88000,"image":"images/im6.jpg"},
+        ];
+        for(let i = 0 ; i< obj_data.length ; i++){
+        c += 
+        `  <div class="col">
+                <div class="img">
+                        <img src = "`+obj_data[i].image+`">
+                </div>
+                <div class="content">
+                    <h2>`+obj_data[i].name+`</h2>
+                    <h3>`+obj_data[i].price+`</h3>
+                </div>
+            </div>`
+            
+        }
+        r1.innerHTML = c;
+        function searchhere() {
+            let c2= "";
+            let d = document.querySelector("se").value;  
+  var newArray = obj_data.filter(function (el) {
+  return el.name == d.toLowerCase() ;
+      
+});
+if(newArray){
+for(let i = 0 ; i<newArray.length;i++){
+  c2 +=  `<div class="col">
+                <div class="img">
+                        <img src = "`+newArray[i].image+`">
+                </div>
+                <div class="content">
+                    <h2>`+newArray[i].name+`</h2>
+                    <h3>`+newArray[i].price+`</h3>
+                </div>
+            </div>`
+}
+
+r1.innerHTML = c2;
+}
+
+        }
+
+    </script>
+
+</body>
+</html>

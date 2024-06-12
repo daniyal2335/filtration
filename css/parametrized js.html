@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            height: 700px;
+            width: 650px;
+            border: 1px solid black;
+            margin: 100px auto;
+
+        }
+        .main{
+            height: 500px;
+            border: 1px solid black;
+    
+        }
+        .row{
+            display: flex;
+            height: 180px;
+            justify-content: space-around;
+            align-items: center;
+            /* border: 1px solid black;  */
+        }
+        .ch{
+            /* border: 1px solid black; */
+            height:150px;
+            width: 180px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main">
+            <img src="../images/car1.jpg" id="main" height="365px" width="650px">
+        </div>
+
+     <div class="row">
+ <div class="ch">
+  <img src="../images/car2.jpg" onclick="fun(this.src)" width="180px" alt="">
+</div>
+<div class="ch">
+    <img src="../images/car3.jpg" onclick="fun(this.src)" width="180px" alt="">
+  </div>
+
+<div class="ch">
+    <img src="../images/car4.jpg" onclick="fun(this.src)" width="180px" height="150px" alt="">
+  </div>
+  
+
+</div>
+
+        </div>
+
+        <script>
+            function fun(abc){
+                let st = document.getElementById("main");
+                st.src = abc;
+                st.style.height="500px";
+                st.style.width ="'650px";
+            }
+        </script>
+    
+
+</body>
+</html>

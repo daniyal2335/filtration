@@ -1,0 +1,37 @@
+ .container{
+    height: 890px;
+    width: 700px;
+    background: url(../images/clock.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: radius;
+    margin-top: 50px;
+    margin-left: 70px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+
+}
+input{
+    
+    margin: 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+body{
+    background-color: rgb(59, 55, 55);
+}
+.container2{
+    margin-left: 600px;
+    background-color: white;
+    height: 890px;
+    width: 600px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
+form{
+    text-align: center;
+    font-size:10px;
+}
+
+

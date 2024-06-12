@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <img class="card-img-top" src="holder.js/100x180/" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Title</h4>
+                        <p class="card-text">Text</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let abc=$(".r1");
+        let a_b="";
+        
+                $.ajax({
+                    url: "product.json",
+                    method: "get",
+                    success: function (data) {
+                        $.each(data.condition_method, function (abc, v) {
+                            //    console.log(value.name)
+
+                            c_m += `<div class="col-md-8 mt-4">
+          <div class="card p-3">
+        <img class="img-top" src="`+ v.image + `" alt="" height="300px">
+            <div class="card-body">
+                <h2 class="card-title">`+ v.name + `<span></span>
+             
+                </div>
+                <button class="btn btn-info" data-toggle="modal" data-target="#conditionmethod`+ v.id + `">detail</button>
+                <div class="modal fade" id="conditionmethod`+ v.id + `" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+            </div>
+
+                
+                    
+                
+            
+<div class="modal-body">
+                <div class="row">
+                        <div class="col-md-5">
+                            <img class="img-top img-fluid" src="`+ v.image + `" alt="" height="150px">
+                        </div>
+                        <div class="col-md-6 ">
+                            <p>
+                           `+ v.description + `
+                            </p>    
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" class="p_id" value="`+ v.id + `>
+                    <input type="hidden" class="p_name" value="`+ v.description + `">
+                    <input type="hidden" class="p_image" value="`+ v.image + `">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+                </div>
+            </div>`
+
+
+
+
+
+                            condition_method.html(c_m);
+                        });
+                    }
+                    })
+
+
+    </script>
+</body>
+</html>
